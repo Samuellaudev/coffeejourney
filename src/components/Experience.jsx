@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import { Environment } from "@react-three/drei";
+import { Environment, useScroll } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { Avatar } from "./Avatar";
 import { SectionTitle } from "./SectionTitle";
 
@@ -7,6 +8,12 @@ const SECTIONS_DISTANCE = 10;
 
 export const Experience = () => {
   const sceneContainer = useRef()
+  const scrollData = useScroll()
+
+  useFrame(() => {
+    sceneContainer.current.position.z =
+      -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1)
+  })
 
   return (
     <>
