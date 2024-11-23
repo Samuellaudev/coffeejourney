@@ -4,9 +4,11 @@ Command: npx gltfjsx@6.5.3 public/models/673e60132ba627d4da664fb2.glb -o src/com
 */
 
 import React, { useEffect, useRef, useState } from 'react'
-import { useGraph } from '@react-three/fiber'
-import { useGLTF, useFBX, useAnimations } from '@react-three/drei'
+import { useFrame, useGraph } from '@react-three/fiber'
+import { useGLTF, useFBX, useAnimations, useScroll } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
+
+import * as THREE from "three";
 
 export function Avatar(props) {
   const { scene } = useGLTF('/models/673e60132ba627d4da664fb2.glb')
@@ -26,6 +28,32 @@ export function Avatar(props) {
   );
 
   const [animation, setAnimation] = useState("Idle")
+  const scrollData = useScroll();
+  const lastScroll = useRef(0)
+
+  useFrame(() => {
+    const scrollDelta = scrollData.offset - lastScroll.current;
+    let rotationTarget = 0
+
+    if (Math.abs(scrollDelta) > 0.00001) {
+      setAnimation("Walking");
+
+      if (scrollDelta > 0) {
+        rotationTarget = 0;
+      } else {
+        rotationTarget = Math.PI;
+      }
+    } else {
+      setAnimation("Idle");
+    }
+
+    group.current.rotation.y = THREE.MathUtils.lerp(
+      group.current.rotation.y,
+      rotationTarget,
+      0.1
+    );
+    lastScroll.current = scrollData.offset;
+  });
 
   useEffect(() => {
     actions[animation].reset().fadeIn(0.5).play()
