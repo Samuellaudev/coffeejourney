@@ -11,50 +11,64 @@ import { SkeletonUtils } from 'three-stdlib'
 import * as THREE from "three";
 
 export function Avatar(props) {
+  // Load GLTF model
   const { scene } = useGLTF('/models/673e60132ba627d4da664fb2.glb')
+  // Clone the scene to prevent modifying the original instance
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
+  // Extract nodes and materials for direct use
   const { nodes, materials } = useGraph(clone)
 
+  // Load animations for idle and walking states
   const { animations: idleAnimation } = useFBX('/animations/Idle.fbx')
   const { animations: walkingAnimation } = useFBX('/animations/Walking.fbx')
 
+  // Assign readable names to animation clips for clarity
   idleAnimation[0].name = "Idle";
   walkingAnimation[0].name = "Walking";
 
+  // Ref to the group containing the Avatar
   const group = useRef()
+  // Handle animations using useAnimations hook
   const { actions } = useAnimations(
     [idleAnimation[0], walkingAnimation[0]],
     group
   );
 
+  // Manage the current animation state
   const [animation, setAnimation] = useState("Idle")
+  // Scroll-based animation handling
   const scrollData = useScroll();
   const lastScroll = useRef(0)
 
   useFrame(() => {
+    // Calculate scroll movement
     const scrollDelta = scrollData.offset - lastScroll.current;
+    // Initialize rotation target for character direction
     let rotationTarget = 0
 
+    // Determine animation state based on scroll delta
     if (Math.abs(scrollDelta) > 0.00001) {
       setAnimation("Walking");
 
-      if (scrollDelta > 0) {
-        rotationTarget = 0;
-      } else {
-        rotationTarget = Math.PI;
-      }
+      // Rotate to face scroll direction
+      rotationTarget = scrollDelta > 0
+        ? 0
+        : Math.PI;
     } else {
       setAnimation("Idle");
     }
 
+    // Smoothly interpolate character rotation
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
       rotationTarget,
-      0.1
+      0.1 // Adjust smoothing factor for responsiveness
     );
+    // Update scroll position
     lastScroll.current = scrollData.offset;
   });
 
+  // Effect for managing animation transitions
   useEffect(() => {
     actions[animation].reset().fadeIn(0.5).play()
     return () => actions[animation].fadeOut(0.5)
@@ -77,6 +91,7 @@ export function Avatar(props) {
   )
 }
 
+// Preload resources for better performance
 useGLTF.preload('/models/673e60132ba627d4da664fb2.glb')
 useFBX.preload('/animations/Idle.fbx')
 useFBX.preload('/animations/Walking.fbx')
