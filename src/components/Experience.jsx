@@ -9,6 +9,8 @@ import { motion } from "framer-motion-3d";
 import { Avatar } from "./Avatar";
 import { Home } from "./Period_Before/Home";
 import { FlyToUk } from "./Period_Before/FlyToUk";
+import { Jobless } from "./Period_Before/Jobless";
+
 import { Skills } from "./Period_During/Skills";
 import { Projects } from "./Period_During/Projects";
 // Contact section
@@ -89,9 +91,22 @@ export const Experience = () => {
         >
           <FlyToUk />
         </motion.group>
-        {/* SKILLS */ }
+        {/* Jobless */ }
         <motion.group
           position-z={ SECTIONS_DISTANCE * 2 }
+          position-y={ -5 }
+          variants={ {
+            jobless: {
+              y: 0,
+            },
+          } }
+        >
+          <Jobless />
+        </motion.group>
+
+        {/* SKILLS */ }
+        <motion.group
+          position-z={ SECTIONS_DISTANCE * 3 }
           position-y={ -5 }
           variants={ {
             skills: {
@@ -103,7 +118,7 @@ export const Experience = () => {
         </motion.group>
         {/* PROJECTS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 3 }
+          position-z={ SECTIONS_DISTANCE * 4 }
           position-y={ -5 }
           variants={ {
             projects: {
@@ -115,7 +130,7 @@ export const Experience = () => {
         </motion.group>
         {/* CONTACT */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 4 }
+          position-z={ SECTIONS_DISTANCE * 5 }
           position-y={ -5 }
           variants={ {
             contact: {

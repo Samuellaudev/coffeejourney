@@ -23,7 +23,7 @@ function App() {
       <Canvas camera={ { position: [0, 0.5, 5], fov: 42 } }>
         <color attach="background" args={ ["#f5f3ee"] } />
         <fog attach="fog" args={ ["#f5f3ee", 10, 50] } />
-        <Suspense fallback={ null }>{ start &&
+        <Suspense fallback={ null }>{ !start &&
           <ScrollControls
             pages={ config.sections.length }
             damping={ 0.1 }
@@ -47,7 +47,7 @@ function App() {
         }</Suspense>
       </Canvas>
       { start && <Menu />}
-      <LoadingScreen started={start} onStarted={() => setStart(true)} />
+      {/* <LoadingScreen started={start} onStarted={() => setStart(true)} /> */}
     </>
   );
 }

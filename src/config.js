@@ -1,9 +1,13 @@
 export const config = {
   title: 'Web Developer',
-  sections: ["home", "flyToUk", "skills", "projects", "contact"],
+  sections: ["home", "flyToUk", "jobless", "skills", "projects", "contact"],
   home: {
     title: "Web Developer",
     subtitle: "",
+  },
+  jobless: {
+    dynamicTitle: "One Year",
+    staticTitle: "Employment Break"
   },
   contact: {
     mail: "info@samuellau.dev",
