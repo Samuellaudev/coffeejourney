@@ -5,7 +5,8 @@ import { config } from "../../config";
 
 export const MonitorScreen = ({ ...props }) => {
   const [project] = useAtom(projectAtom);
-  const projectTexture = useTexture(project.image);
+  // const projectTexture = useTexture(project.image);
+  const projectTexture = useTexture('textures/Flag_HK.jpg');
 
   return (
     <group { ...props }>
