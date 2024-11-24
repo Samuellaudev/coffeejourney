@@ -1,6 +1,7 @@
 import { config } from "./config";
 import { Canvas } from "@react-three/fiber";
 import { ScrollControls } from "@react-three/drei";
+import { MotionConfig } from "framer-motion";
 import { Experience } from "./components/Experience";
 
 function App() {
@@ -15,7 +16,13 @@ function App() {
           maxSpeed={ 0.2 }
         >
           <group position-y={ -1 }>
-            <Experience />
+            <MotionConfig
+              transition={ {
+                duration: 0.6,
+              } }
+            >
+              <Experience />
+            </MotionConfig>
           </group>
         </ScrollControls>
       </Canvas>
