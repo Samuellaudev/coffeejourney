@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useGLTF, useCursor } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { config } from "../config";
+import { config } from "../../config";
 
 export function Mailbox(props) {
   const { nodes, materials } = useGLTF("/models/Mailbox v2.glb");

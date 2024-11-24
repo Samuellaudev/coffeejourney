@@ -2,8 +2,8 @@ export const config = {
   title: 'Web Developer',
   sections: ["home", "skills", "projects", "contact"],
   home: {
-    title: "Samuel",
-    subtitle: "Web Developer",
+    title: "Web Developer",
+    subtitle: "",
   },
   contact: {
     mail: "info@samuellau.dev",

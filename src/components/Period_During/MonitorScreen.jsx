@@ -1,7 +1,7 @@
 import { useTexture } from "@react-three/drei";
 import { useAtom } from "jotai";
-import { projectAtom } from "./Interface";
-import { config } from "../config";
+import { projectAtom } from "../Interface";
+import { config } from "../../config";
 
 export const MonitorScreen = ({ ...props }) => {
   const [project] = useAtom(projectAtom);
