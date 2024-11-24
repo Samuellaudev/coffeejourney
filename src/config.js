@@ -4,4 +4,7 @@ export const config = {
     title: "Samuel",
     subtitle: "Web Developer",
   },
+  contact: {
+    mail: "info@samuellau.dev",
+  },
 };
