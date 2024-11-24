@@ -70,4 +70,13 @@ export const config = {
       link: "https://www.youtube.com/watch?v=pGMKIyALcK0",
     },
   ],
+  contact: {
+    name: "Samuel Lau",
+    address: "Bristol, United Kingdom",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/samuel-cf-lau/",
+      twitter: "",
+    },
+    mail: "info@samuellau.dev",
+  },
 };
