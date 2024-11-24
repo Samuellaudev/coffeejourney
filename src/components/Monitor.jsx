@@ -11,8 +11,8 @@ export function Monitor(props) {
   const { nodes, materials } = useGLTF("/models/Monitor.glb");
 
   return (
-    <group {...props} dispose={null}>
-      <mesh geometry={nodes.iMac.geometry} material={materials.Mat} />
+    <group { ...props } dispose={ null }>
+      <mesh geometry={ nodes.iMac.geometry } material={ materials.Mat } />
     </group>
   );
 }

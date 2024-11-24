@@ -10,22 +10,22 @@ import React from "react";
 export function Laptop(props) {
   const { nodes, materials } = useGLTF("/models/Laptop.glb");
   return (
-    <group {...props} dispose={null}>
+    <group { ...props } dispose={ null }>
       <mesh
-        geometry={nodes["LapTop_Cube002-Mesh"].geometry}
-        material={materials.DarkGray}
+        geometry={ nodes["LapTop_Cube002-Mesh"].geometry }
+        material={ materials.DarkGray }
       />
       <mesh
-        geometry={nodes["LapTop_Cube002-Mesh_1"].geometry}
-        material={materials.lighterGray}
+        geometry={ nodes["LapTop_Cube002-Mesh_1"].geometry }
+        material={ materials.lighterGray }
       />
       <mesh
-        geometry={nodes["LapTop_Cube002-Mesh_2"].geometry}
-        material={materials.Gray2}
+        geometry={ nodes["LapTop_Cube002-Mesh_2"].geometry }
+        material={ materials.Gray2 }
       />
       <mesh
-        geometry={nodes["LapTop_Cube002-Mesh_3"].geometry}
-        material={materials.Screen}
+        geometry={ nodes["LapTop_Cube002-Mesh_3"].geometry }
+        material={ materials.Screen }
       />
     </group>
   );

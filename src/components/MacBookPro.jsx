@@ -13,41 +13,41 @@ export function MacBookPro(props) {
 
   return (
     <group { ...props } dispose={ null }>
-      <mesh position={[0.02, 0.85, -0.66]}>
-        <planeGeometry args={[2.55, 1.55]} />
-        <meshStandardMaterial map={screenTexture} />
+      <mesh position={ [0.02, 0.85, -0.66] }>
+        <planeGeometry args={ [2.55, 1.55] } />
+        <meshStandardMaterial map={ screenTexture } />
       </mesh>
       <mesh
-        geometry={nodes.mesh485226736.geometry}
-        material={materials.mat16}
+        geometry={ nodes.mesh485226736.geometry }
+        material={ materials.mat16 }
       />
       <mesh
-        geometry={nodes.mesh485226736_1.geometry}
-        material={materials.mat23}
+        geometry={ nodes.mesh485226736_1.geometry }
+        material={ materials.mat23 }
       />
       <mesh
-        geometry={nodes.mesh485226736_2.geometry}
-        material={materials.mat17}
+        geometry={ nodes.mesh485226736_2.geometry }
+        material={ materials.mat17 }
       />
       <mesh
-        geometry={nodes.mesh485226736_3.geometry}
-        material={materials.mat15}
+        geometry={ nodes.mesh485226736_3.geometry }
+        material={ materials.mat15 }
       />
       <mesh
-        geometry={nodes.mesh256948792.geometry}
-        material={materials.mat16}
+        geometry={ nodes.mesh256948792.geometry }
+        material={ materials.mat16 }
       />
       <mesh
-        geometry={nodes.mesh256948792_1.geometry}
-        material={materials.mat23}
+        geometry={ nodes.mesh256948792_1.geometry }
+        material={ materials.mat23 }
       />
       <mesh
-        geometry={nodes.mesh256948792_2.geometry}
-        material={materials.mat17}
+        geometry={ nodes.mesh256948792_2.geometry }
+        material={ materials.mat17 }
       />
       <mesh
-        geometry={nodes.mesh256948792_3.geometry}
-        material={materials.mat25}
+        geometry={ nodes.mesh256948792_3.geometry }
+        material={ materials.mat25 }
       />
     </group>
   );
