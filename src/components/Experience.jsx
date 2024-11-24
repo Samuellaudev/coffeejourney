@@ -2,22 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import {
   Environment,
   useScroll,
-  Float,
-  RoundedBox,
   ContactShadows
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import { Avatar } from "./Avatar";
-import { SectionTitle } from "./SectionTitle";
 import { Home } from "./Period_Before/Home";
+import { FlyToUk } from "./Period_Before/FlyToUk";
 import { Skills } from "./Period_During/Skills";
 import { Projects } from "./Period_During/Projects";
 // Contact section
 import { Contact } from "./Period_After/Contact";
 
 import { config } from "../config";
-import * as THREE from "three";
 
 const SECTIONS_DISTANCE = 10;
 
@@ -80,9 +77,21 @@ export const Experience = () => {
         >
           <Home />
         </motion.group>
-        {/* SKILLS */ }
+        {/* FlyToUk */ }
         <motion.group
           position-z={ SECTIONS_DISTANCE }
+          position-y={ -5 }
+          variants={ {
+            flyToUk: {
+              y: 0,
+            },
+          } }
+        >
+          <FlyToUk />
+        </motion.group>
+        {/* SKILLS */ }
+        <motion.group
+          position-z={ SECTIONS_DISTANCE * 2 }
           position-y={ -5 }
           variants={ {
             skills: {
@@ -94,7 +103,7 @@ export const Experience = () => {
         </motion.group>
         {/* PROJECTS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 2 }
+          position-z={ SECTIONS_DISTANCE * 3 }
           position-y={ -5 }
           variants={ {
             projects: {
@@ -106,7 +115,7 @@ export const Experience = () => {
         </motion.group>
         {/* CONTACT */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 3 }
+          position-z={ SECTIONS_DISTANCE * 4 }
           position-y={ -5 }
           variants={ {
             contact: {
