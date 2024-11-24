@@ -4,6 +4,7 @@ import { Scroll, ScrollControls } from "@react-three/drei";
 import { MotionConfig } from "framer-motion";
 import { Experience } from "./components/Experience";
 import { Interface } from "./components/Interface";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      <Menu />
     </>
   );
 }
