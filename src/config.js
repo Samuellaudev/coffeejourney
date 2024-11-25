@@ -1,6 +1,6 @@
 export const config = {
   title: 'Web Developer',
-  sections: ["home", "flyToUk", "jobless", "skills", "projects", "contact"],
+  sections: ["home", "flyToUk", "jobless", "wellGrounded", "skills", "projects", "contact"],
   home: {
     title: "Web Developer",
     subtitle: "",
@@ -8,6 +8,10 @@ export const config = {
   jobless: {
     dynamicTitle: "One Year",
     staticTitle: "Employment Break"
+  },
+  wellGrounded: {
+    dynamicTitle: "Well Grounded",
+    staticTitle: "New Challenge"
   },
   contact: {
     mail: "info@samuellau.dev",

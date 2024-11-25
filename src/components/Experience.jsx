@@ -10,6 +10,7 @@ import { Avatar } from "./Avatar";
 import { Home } from "./Period_Before/Home";
 import { FlyToUk } from "./Period_Before/FlyToUk";
 import { Jobless } from "./Period_Before/Jobless";
+import { WellGrounded } from "./Period_Before/WellGrounded";
 
 import { Skills } from "./Period_During/Skills";
 import { Projects } from "./Period_During/Projects";
@@ -103,10 +104,22 @@ export const Experience = () => {
         >
           <Jobless />
         </motion.group>
+        {/* WellGrounded */ }
+        <motion.group
+          position-z={ SECTIONS_DISTANCE * 3 }
+          position-y={ -5 }
+          variants={ {
+            wellGrounded: {
+              y: 0,
+            },
+          } }
+        >
+          <WellGrounded />
+        </motion.group>
 
         {/* SKILLS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 3 }
+          position-z={ SECTIONS_DISTANCE * 4 }
           position-y={ -5 }
           variants={ {
             skills: {
@@ -118,7 +131,7 @@ export const Experience = () => {
         </motion.group>
         {/* PROJECTS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 4 }
+          position-z={ SECTIONS_DISTANCE * 5 }
           position-y={ -5 }
           variants={ {
             projects: {
@@ -130,7 +143,7 @@ export const Experience = () => {
         </motion.group>
         {/* CONTACT */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 5 }
+          position-z={ SECTIONS_DISTANCE * 6 }
           position-y={ -5 }
           variants={ {
             contact: {
