@@ -36,39 +36,34 @@ export const config = {
   },
   skills: [
     {
-      name: "React",
+      name: "Espresso Machine Operation",
       icon: "icons/react-native.png",
-      level: 80,
+      level: 60,
     },
     {
-      name: "JavaScript",
+      name: "Coffee Preparation Techniques",
       icon: "icons/javascript.png",
-      level: 80,
+      level: 60,
     },
     {
-      name: "Three.js",
+      name: "Product Knowledge",
       icon: "icons/threejs.png",
-      level: 70,
+      level: 60,
     },
     {
-      name: "Blender",
-      icon: "icons/blender-3d.png",
-      level: 50,
-    },
-    {
-      name: "French",
-      icon: "icons/france.png",
-      level: 100,
-    },
-    {
-      name: "English",
-      icon: "icons/usa.png",
-      level: 90,
-    },
-    {
-      name: "Japanese",
+      name: "Cleaning and Workspace Management",
       icon: "icons/japan.png",
-      level: 30,
+      level: 60,
+    },
+    {
+      name: "Customer Service",
+      icon: "icons/usa.png",
+      level: 60,
+    },
+    {
+      name: "Latte Art Skills",
+      icon: "icons/japan.png",
+      level: 10,
     },
   ],
   projects: [

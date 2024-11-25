@@ -219,11 +219,11 @@ export const Interface = () => {
                 } }
               >
                 <div className="skill__label">
-                  <img
+                  {/* <img
                     className="skill__label__image"
                     src={ skill.icon }
                     alt={ skill.name }
-                  />
+                  /> */}
                   <h2 className="skill__label__name">{ skill.name }</h2>
                 </div>
                 <div className="skill__level">
