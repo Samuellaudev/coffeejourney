@@ -7,11 +7,11 @@ export const config = {
   },
   jobless: {
     dynamicTitle: "One Year",
-    staticTitle: "Employment Break"
+    staticTitle: "Employment \nBreak"
   },
   wellGrounded: {
     dynamicTitle: "Well Grounded",
-    staticTitle: "New Challenge"
+    staticTitle: "New \nChallenge"
   },
   contact: {
     mail: "info@samuellau.dev",

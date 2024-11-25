@@ -1,4 +1,4 @@
-import { Center, Float, MeshDistortMaterial } from '@react-three/drei';
+import { Float } from '@react-three/drei';
 import { SectionTitle } from '../SectionTitle';
 import { config } from '../../config';
 import { BookCase } from '../Period_During/BookCase';
@@ -31,35 +31,31 @@ export const Jobless = () => {
         />
       </group>
       <group
-        position-x={ 1 }
+        position-x={ 0.1 }
         rotation-y={ -0.3 }
       >
         <Float floatIntensity={ 0.6 }>
-          <Center disableY disableZ>
-            <SectionTitle
-              size={ 0.7 }
-              position-y={ 1.6 }
-              position-z={ -3 }
-              bevelEnabled
-              bevelThickness={ 0.3 }
-              color="yellow"
-            >
-              { config.jobless.dynamicTitle }
-            </SectionTitle>
-          </Center>
-        </Float>
-        <Center disableY disableZ>
           <SectionTitle
-            size={ 0.5 }
-            position-x={ 1.3 }
-            position-y={ 0.3 }
+            size={ 0.7 }
+            position-y={ 2.3 }
             position-z={ -3 }
             bevelEnabled
             bevelThickness={ 0.3 }
+            color="yellow"
           >
-            { config.jobless.staticTitle }
+            { config.jobless.dynamicTitle }
           </SectionTitle>
-        </Center>
+        </Float>
+        <SectionTitle
+          size={ 0.5 }
+          position-y={ 1.2 }
+          position-z={ -3 }
+          rotation-y={ -0.2 }
+          bevelEnabled
+          bevelThickness={ 0.3 }
+        >
+          { config.jobless.staticTitle }
+        </SectionTitle>
       </group>
     </>
   )

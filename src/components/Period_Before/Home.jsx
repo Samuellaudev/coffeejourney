@@ -18,6 +18,7 @@ export const Home = () => {
             position-x={ 1 }
             position-y={ 1.6 }
             position-z={ -3 }
+            rotation-y={0.3}
             bevelEnabled
             bevelThickness={ 0.3 }
             color="#AFE1AF"

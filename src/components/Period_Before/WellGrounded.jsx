@@ -13,8 +13,8 @@ export const WellGrounded = () => {
           <Center disableY disableZ>
             <SectionTitle
               size={ 0.6 }
-              position-x={ -1 }
-              position-y={ 1.6 }
+              position-x={ -1.3 }
+              position-y={ 2.2 }
               position-z={ -3 }
               bevelEnabled
               bevelThickness={ 0.3 }
@@ -24,18 +24,16 @@ export const WellGrounded = () => {
             </SectionTitle>
           </Center>
         </Float>
-        <Center disableY disableZ>
           <SectionTitle
             size={ 0.5 }
-            position-x={ -1 }
-            position-y={ 0.3 }
+            position-x={ -3 }
+            position-y={ 1.2 }
             position-z={ -3 }
             bevelEnabled
             bevelThickness={ 0.3 }
           >
             { config.wellGrounded.staticTitle }
           </SectionTitle>
-        </Center>
       </group>
       <group
         position-z={ -2 }
@@ -44,7 +42,7 @@ export const WellGrounded = () => {
         <Float floatIntensity={ 0.6 }>
           <EmojiHappy
             scale={ 0.5 }
-            position-y={ 2.7 }
+            position-y={ 2.8 }
             position-x={ 1.5 }
             position-z={ -2.3 }
             rotation-y={ -1.8 }

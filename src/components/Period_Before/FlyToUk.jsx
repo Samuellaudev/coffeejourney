@@ -15,7 +15,7 @@ export const FlyToUk = () => {
           rotation-y={ Math.PI / 6 }
           color="#7586d9"
         >
-          FlightTo UK
+          Flight To UK
         </SectionTitle>
         <group rotation-y={ Math.PI / 6 } >
           <Flag
