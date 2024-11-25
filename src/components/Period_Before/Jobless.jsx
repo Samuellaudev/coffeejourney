@@ -12,7 +12,7 @@ export const Jobless = () => {
       <group position-x={ -2 }>
         <Float floatIntensity={ 0.6 }>
           <EmojiSad
-            position-y={ 3.5 }
+            position-y={ 3.3 }
             rotation-y={ 0.2 }
           />
         </Float>
