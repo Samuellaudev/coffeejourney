@@ -14,6 +14,7 @@ import { Jobless } from "./Period_Before/Jobless";
 import { WellGrounded } from "./Period_Before/WellGrounded";
 // Period During
 import { Essentials } from "./Period_During/Essentials";
+import { Master } from "./Period_During/Master";
 import { Skills } from "./Period_During/Skills";
 import { Projects } from "./Period_During/Projects";
 // Contact section
@@ -130,10 +131,22 @@ export const Experience = () => {
         >
           <Essentials />
         </motion.group>
+        {/* Master */ }
+        <motion.group
+          position-z={ SECTIONS_DISTANCE * 5 }
+          position-y={ -5 }
+          variants={ {
+            master: {
+              y: 0,
+            },
+          } }
+        >
+          <Master />
+        </motion.group>
 
         {/* SKILLS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 5 }
+          position-z={ SECTIONS_DISTANCE * 6 }
           position-y={ -5 }
           variants={ {
             skills: {
@@ -145,7 +158,7 @@ export const Experience = () => {
         </motion.group>
         {/* PROJECTS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 6 }
+          position-z={ SECTIONS_DISTANCE * 7 }
           position-y={ -5 }
           variants={ {
             projects: {
@@ -157,7 +170,7 @@ export const Experience = () => {
         </motion.group>
         {/* CONTACT */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 7 }
+          position-z={ SECTIONS_DISTANCE * 8 }
           position-y={ -5 }
           variants={ {
             contact: {

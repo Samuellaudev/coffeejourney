@@ -1,6 +1,16 @@
 export const config = {
   title: 'Web Developer',
-  sections: ["home", "flyToUk", "jobless", "wellGrounded", "essentials", "skills", "projects", "contact"],
+  sections: [
+    "home",
+    "flyToUk",
+    "jobless",
+    "wellGrounded",
+    "essentials",
+    "master",
+    "skills",
+    "projects",
+    "contact"
+  ],
   home: {
     title: "Web Developer",
     subtitle: "",
@@ -15,6 +25,10 @@ export const config = {
   },
   essentials: {
     title: "Essentials",
+    subtitle: "",
+  },
+  master: {
+    title: "Master",
     subtitle: "",
   },
   contact: {
