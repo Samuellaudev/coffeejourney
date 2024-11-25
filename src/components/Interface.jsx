@@ -246,7 +246,7 @@ export const Interface = () => {
           </motion.div>
         </section>
         {/* PROJECTS */ }
-        <section className="section section--left">
+        {/* <section className="section section--left">
           <motion.div
             className="projects"
             whileInView={ "visible" }
@@ -291,46 +291,33 @@ export const Interface = () => {
               </motion.div>
             )) }
           </motion.div>
-        </section>
-        {/* CONTACT */ }
+        </section> */}
+        {/* Thank You */ }
         <section className="section section--left">
           <motion.div
-            className="contact"
-            whileInView={ "visible" }
+            className="scroll-down"
             initial={ {
               opacity: 0,
             } }
-            variants={ {
-              visible: {
-                opacity: 1,
-              },
+            animate={ {
+              opacity: hasScrolled ? 0 : 1,
             } }
           >
-            <h1 className="contact__name">{ config.contact.name }</h1>
-            <p className="contact__address">{ config.contact.address }</p>
-            <div className="contact__socials">
-              <a href={ config.contact.socials.linkedin } target="_blank">
-                <img
-                  className="contact__socials__icon"
-                  src="icons/linkedin.png"
-                  alt="linkedin"
-                />
-              </a>
-              <a href={ config.contact.socials.twitter } target="_blank">
-                <img
-                  className="contact__socials__icon"
-                  src="icons/twitter.png"
-                  alt="twitter"
-                />
-              </a>
-              <a href={ `mailto:${ config.contact.mail }` } target="_blank">
-                <img
-                  className="contact__socials__icon"
-                  src="icons/email.png"
-                  alt="email"
-                />
-              </a>
-            </div>
+            <motion.div
+              className="scroll-down__wheel"
+              initial={ {
+                translateY: 0,
+              } }
+              animate={ {
+                translateY: 4,
+              } }
+              transition={ {
+                duration: 0.4,
+                repeatDelay: 0.5,
+                repeatType: "reverse",
+                repeat: Infinity,
+              } }
+            ></motion.div>
           </motion.div>
         </section>
       </div>

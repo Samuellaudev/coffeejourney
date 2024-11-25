@@ -16,9 +16,9 @@ import { WellGrounded } from "./Period_Before/WellGrounded";
 import { Essentials } from "./Period_During/Essentials";
 import { Master } from "./Period_During/Master";
 import { Skills } from "./Period_During/Skills";
-import { Projects } from "./Period_During/Projects";
-// Contact section
-import { Contact } from "./Period_After/Contact";
+// import { Projects } from "./Period_During/Projects";
+// Period After
+import { ThankYou } from "./Period_After/ThankYou";
 
 import { config } from "../config";
 
@@ -143,7 +143,6 @@ export const Experience = () => {
         >
           <Master />
         </motion.group>
-
         {/* SKILLS */ }
         <motion.group
           position-z={ SECTIONS_DISTANCE * 6 }
@@ -156,8 +155,9 @@ export const Experience = () => {
         >
           <Skills />
         </motion.group>
+
         {/* PROJECTS */ }
-        <motion.group
+        {/* <motion.group
           position-z={ SECTIONS_DISTANCE * 7 }
           position-y={ -5 }
           variants={ {
@@ -167,18 +167,19 @@ export const Experience = () => {
           } }
         >
           <Projects />
-        </motion.group>
-        {/* CONTACT */ }
+        </motion.group> */}
+
+        {/* Thank You */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 8 }
+          position-z={ SECTIONS_DISTANCE * 7 }
           position-y={ -5 }
           variants={ {
-            contact: {
+            thankYou: {
               y: 0,
             },
           } }
         >
-          <Contact />
+          <ThankYou />
         </motion.group>
       </motion.group>
     </>

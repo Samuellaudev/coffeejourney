@@ -8,8 +8,8 @@ export const config = {
     "essentials",
     "master",
     "skills",
-    "projects",
-    "contact"
+    // "projects",
+    "thankYou"
   ],
   home: {
     title: "Web Developer",
