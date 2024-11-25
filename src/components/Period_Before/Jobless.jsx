@@ -42,6 +42,7 @@ export const Jobless = () => {
               position-z={ -3 }
               bevelEnabled
               bevelThickness={ 0.3 }
+              color="yellow"
             >
               { config.jobless.dynamicTitle }
             </SectionTitle>
@@ -50,7 +51,7 @@ export const Jobless = () => {
         <Center disableY disableZ>
           <SectionTitle
             size={ 0.5 }
-            position-x={ 1 }
+            position-x={ 1.3 }
             position-y={ 0.3 }
             position-z={ -3 }
             bevelEnabled

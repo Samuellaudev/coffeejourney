@@ -18,6 +18,7 @@ export const WellGrounded = () => {
               position-z={ -3 }
               bevelEnabled
               bevelThickness={ 0.3 }
+              color="#d45b69"
             >
               { config.wellGrounded.dynamicTitle }
             </SectionTitle>

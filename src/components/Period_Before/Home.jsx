@@ -14,11 +14,13 @@ export const Home = () => {
       <Float floatIntensity={ 0.6 }>
         <Center disableY disableZ>
           <SectionTitle
-            size={ 0.8 }
+            size={ 0.6 }
+            position-x={ 1 }
             position-y={ 1.6 }
             position-z={ -3 }
             bevelEnabled
             bevelThickness={ 0.3 }
+            color="#AFE1AF"
           >
             { config.home.title }
           </SectionTitle>

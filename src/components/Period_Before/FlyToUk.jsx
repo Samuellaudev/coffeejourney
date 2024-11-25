@@ -13,6 +13,7 @@ export const FlyToUk = () => {
           position-z={ 1.5 }
           position-y={ 0.2 }
           rotation-y={ Math.PI / 6 }
+          color="#7586d9"
         >
           FlightTo UK
         </SectionTitle>
