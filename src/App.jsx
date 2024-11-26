@@ -9,6 +9,7 @@ import { Menu } from "./components/Menu";
 import { LoadingScreen } from "./components/LoadingScreen";
 
 const audio = new Audio("./audios/cheerful-mood.mp3");
+audio.loop = true;
 function App() {
   const [start, setStart] = useState(false);
 
