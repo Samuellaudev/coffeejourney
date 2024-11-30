@@ -51,7 +51,7 @@ export const config = {
       level: 60,
     },
     {
-      name: "Cleaning and Workspace Management",
+      name: "Cleaning and Maintenance",
       icon: "icons/japan.png",
       level: 60,
     },

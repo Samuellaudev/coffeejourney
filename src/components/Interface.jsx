@@ -225,8 +225,9 @@ export const Interface = () => {
                     alt={ skill.name }
                   /> */}
                   <h2 className="skill__label__name">{ skill.name }</h2>
+                  <div class="checkmark"></div>
                 </div>
-                <div className="skill__level">
+                {/* <div className="skill__level">
                   <motion.div
                     className="skill__level__bar"
                     initial={ { width: 0 } }
@@ -240,11 +241,12 @@ export const Interface = () => {
                       delay: idx * 0.62,
                     } }
                   ></motion.div>
-                </div>
+                </div> */}
               </motion.div>
             )) }
           </motion.div>
         </section>
+
         {/* PROJECTS */ }
         {/* <section className="section section--left">
           <motion.div
