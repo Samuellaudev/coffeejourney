@@ -8,12 +8,13 @@ import { EmojiHappy } from './EmojiHappy';
 export const WellGrounded = () => {
   return (
     <>
+      {/* Left group */ }
       <group position-x={ 0.5 } rotation-y={ Math.PI / 6 }>
         <Float floatIntensity={ 0.6 }>
           <Center disableY disableZ>
             <SectionTitle
               size={ 0.6 }
-              position-x={ -1.3 }
+              position-x={ -1.8 }
               position-y={ 2.2 }
               position-z={ -3 }
               bevelEnabled
@@ -24,17 +25,18 @@ export const WellGrounded = () => {
             </SectionTitle>
           </Center>
         </Float>
-          <SectionTitle
-            size={ 0.5 }
-            position-x={ -3 }
-            position-y={ 1.2 }
-            position-z={ -3 }
-            bevelEnabled
-            bevelThickness={ 0.3 }
-          >
-            { config.wellGrounded.staticTitle }
-          </SectionTitle>
+        <SectionTitle
+          size={ 0.5 }
+          position-x={ -3 }
+          position-y={ 1.2 }
+          position-z={ -3 }
+          bevelEnabled
+          bevelThickness={ 0.3 }
+        >
+          { config.wellGrounded.staticTitle }
+        </SectionTitle>
       </group>
+      {/* Right group */ }
       <group
         position-z={ -2 }
         rotation-y={ -0.6 }

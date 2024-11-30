@@ -9,6 +9,7 @@ import { EmojiSad } from '../Period_Before/EmojiSad';
 export const Jobless = () => {
   return (
     <>
+      {/* Left group */ }
       <group position-x={ -2 }>
         <Float floatIntensity={ 0.6 }>
           <EmojiSad
@@ -30,6 +31,7 @@ export const Jobless = () => {
           rotation-y={ -Math.PI }
         />
       </group>
+      {/* Right group */ }
       <group
         position-x={ 0.1 }
         rotation-y={ -0.3 }
@@ -37,6 +39,7 @@ export const Jobless = () => {
         <Float floatIntensity={ 0.6 }>
           <SectionTitle
             size={ 0.7 }
+            position-x={ 0.1 }
             position-y={ 2.3 }
             position-z={ -3 }
             bevelEnabled

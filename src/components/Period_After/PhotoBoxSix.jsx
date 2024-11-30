@@ -7,7 +7,7 @@ export function PhotoBoxSix() {
 
   return (
     <group
-      position-x={ -1.5 }
+      position-x={ -1.1 }
       position-y={ 1.3 }
       position-z={ -0.5 }
       rotation-y={ 0.3 }
