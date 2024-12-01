@@ -10,64 +10,57 @@ import { ThumbsUp } from "./ThumbsUp";
 export const ThankYou = () => {
   return (
     <>
-      {/* Left group */ }
+      {/* Left Group */}
       <group>
-        <group
-          position-x={ -2.3 }
-          position-y={ 2.2 }
-          position-z={ -0.5 }
-        >
-          <Float floatIntensity={ 2 } rotationIntensity={ 1.5 }>
-            <Balloon scale={ 1.5 } position-x={ -0.5 } position-y={ 0.4 } color="#71a2d9" />
+        {/* Balloons */}
+        <group position={[-0.5, 2, -1]}>
+          <Float floatIntensity={2} rotationIntensity={1.5}>
+            <Balloon scale={1.5} position={[-0.5, 0.4, 0]} color="#71a2d9" />
           </Float>
-          <Float
-            floatIntensity={ 1.5 }
-            rotationIntensity={ 2 }
-            position-z={ 0.5 }
-          >
-            <Balloon scale={ 1.3 } color="#d97183" />
+          <Float floatIntensity={1.5} rotationIntensity={2} position={[0, 0, 0.5]}>
+            <Balloon scale={1.3} color="#d97183" />
           </Float>
-          <Float speed={ 2 } rotationIntensity={ 2 }>
-            <Balloon scale={ 1.6 } position-x={ 0.2 } position-y={ 0.4 } color="yellow" />
+          <Float floatIntensity={2} speed={2} rotationIntensity={2}>
+            <Balloon scale={1.6} position={[0.2, 0.4, 0]} color="yellow" />
           </Float>
         </group>
-        <SectionTitle
-          scale={ 1.3 }
-          position-x={ -2.9 }
-          position-y={ 0.2 }
-          position-z={ 1 }
-          rotation-y={ 0.5 }
+
+        {/* Section Title */}
+        <SectionTitle 
+          scale={1.3} 
+          position={[-2.9, 0.2, 1]} 
+          rotation-y={0.5} 
           color="#FFBF00"
         >
           Thank You
         </SectionTitle>
-        <Float floatIntensity={ 2 } >
+
+        {/* Photo Boxes */}
+        <group position={ [-0.5, 0, 0] }>
+        <Float floatIntensity={2}>
           <PhotoBoxSix />
           <PhotoBoxSeven />
         </Float>
+        </group>
       </group>
-      {/* Right group */ }
-      <group
-        position-x={ 1 }
-      >
-        <Float floatIntensity={ 0.3 } rotationIntensity={ 1.5 }>
-          <ThumbsUp
-            scale={ 0.2 }
-            position-x={ 1.4 }
-            position-y={ 0.6 }
-            position-z={ 1 }
-            rotation-y={ 0.5 }
+
+      {/* Right Group */}
+      <group position={[1, 0, 0]}>
+        {/* Thumbs Up */}
+        <Float floatIntensity={0.3} rotationIntensity={1.5}>
+          <ThumbsUp 
+            scale={0.2} 
+            position={[1.4, 0.6, 1]} 
+            rotation-y={0.5} 
           />
         </Float>
-        <Float
-          floatIntensity={ 0.8 }
-          rotationIntensity={ 1.3 }
-          position-y={ 0.5 }
-        >
-          <PhotoBoxTen /> {/* WellGrounded */ }
-          <PhotoBoxNine /> {/* Wogan */ }
+
+        {/* Photo Boxes */}
+        <Float floatIntensity={0.8} rotationIntensity={1.3} position={[0, 0.5, 0]}>
+          <PhotoBoxTen />
+          <PhotoBoxNine />
         </Float>
       </group>
     </>
-  )
-}
+  );
+};

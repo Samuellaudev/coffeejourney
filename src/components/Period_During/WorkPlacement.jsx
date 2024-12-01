@@ -61,7 +61,7 @@ const arrowTextData = [
     text: "Cleaning and Maintenance"
   },
   {
-    position: [2.1, -1.2, 0],
+    position: [2.1, -1.5, 0],
     arrowPosition: [1.5, 2, 0],
     boxShape: [0.8, 0.4, 0.1],
     text: "Customer Service"
