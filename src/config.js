@@ -1,7 +1,7 @@
 export const config = {
   title: 'Web Developer',
   sections: [
-    "home",
+    "webDeveloper",
     "flyToUk",
     "jobless",
     "wellGrounded",

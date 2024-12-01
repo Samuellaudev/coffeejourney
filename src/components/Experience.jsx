@@ -77,7 +77,7 @@ export const Experience = () => {
         <motion.group
           position-y={ -5 }
           variants={ {
-            home: {
+            webDeveloper: {
               y: 0
             }
           } }

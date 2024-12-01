@@ -7,6 +7,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useFrame, useGraph } from '@react-three/fiber'
 import { useGLTF, useFBX, useAnimations, useScroll } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
+import { useAtom } from 'jotai';
+import { scrollAtom } from '../config/scrollAtom';
 
 import * as THREE from "three";
 
@@ -40,6 +42,8 @@ export function Avatar(props) {
   const scrollData = useScroll();
   const lastScroll = useRef(0)
 
+  const [, setScroll] = useAtom(scrollAtom);
+
   useFrame(() => {
     // Calculate scroll movement
     const scrollDelta = scrollData.offset - lastScroll.current;
@@ -66,6 +70,8 @@ export function Avatar(props) {
     );
     // Update scroll position
     lastScroll.current = scrollData.offset;
+
+    setScroll(scrollData.offset);
   });
 
   // Effect for managing animation transitions
