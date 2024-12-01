@@ -8,6 +8,7 @@ export const config = {
     "essentials",
     "master",
     "skills",
+    "workPlacement",
     // "projects",
     "thankYou"
   ],

@@ -225,7 +225,7 @@ export const Interface = () => {
                     alt={ skill.name }
                   /> */}
                   <h2 className="skill__label__name">{ skill.name }</h2>
-                  <div class="checkmark"></div>
+                  <div className="checkmark"></div>
                 </div>
                 {/* <div className="skill__level">
                   <motion.div
@@ -244,6 +244,35 @@ export const Interface = () => {
                 </div> */}
               </motion.div>
             )) }
+          </motion.div>
+        </section>
+
+        {/* Work Placement */ }
+        <section className="section section--left">
+          <motion.div
+            className="scroll-down"
+            initial={ {
+              opacity: 0,
+            } }
+            animate={ {
+              opacity: hasScrolled ? 0 : 1,
+            } }
+          >
+            <motion.div
+              className="scroll-down__wheel"
+              initial={ {
+                translateY: 0,
+              } }
+              animate={ {
+                translateY: 4,
+              } }
+              transition={ {
+                duration: 0.4,
+                repeatDelay: 0.5,
+                repeatType: "reverse",
+                repeat: Infinity,
+              } }
+            ></motion.div>
           </motion.div>
         </section>
 
