@@ -47,7 +47,7 @@ function App() {
           </ScrollControls>
         }</Suspense>
       </Canvas>
-      {/* { start && <Menu />} */}
+      { start && <Menu />}
       <LoadingScreen started={start} onStarted={() => setStart(true)} />
     </>
   );
