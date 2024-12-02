@@ -17,7 +17,7 @@ export const CustomText = ({
         fontSize={ fontSize }
         position={ [0, 0, 0.1] }
         maxWidth={ textMaxWidth }
-        font={ "fonts/Inter_Bold.json" }
+        font={ "fonts/Inter_18pt_Bold.json" }
         characters={ children }
       >
         { children }

@@ -27,4 +27,4 @@ export function Flag(props) {
 }
 
 useGLTF.preload('/models/Flag.glb')
-useTexture.preload("textures/Flag_UK.jpg");
+useTexture.preload("textures/Flag_UK.svg");

@@ -3,7 +3,7 @@ import { Text3D } from "@react-three/drei";
 export const SectionTitle = ({ children, color = 'white', ...props }) => {
   return (
     <Text3D
-      font={ "fonts/Inter_Bold.json" }
+      font={ "fonts/Inter_18pt_Bold.json" }
       size={ 0.3 }
       bevelEnabled
       bevelThickness={ 0.01 }
