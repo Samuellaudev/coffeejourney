@@ -5,7 +5,7 @@ import { PhotoBoxSix } from "./PhotoBoxSix";
 import { PhotoBoxSeven } from "./PhotoBoxSeven";
 import { PhotoBoxNine } from "./PhotoBoxNine";
 import { PhotoBoxTen } from "./PhotoBoxTen";
-import { ThumbsUp } from "./ThumbsUp";
+import { ThumbUp } from "./ThumbUp";
 
 export const ThankYou = () => {
   return (
@@ -46,12 +46,12 @@ export const ThankYou = () => {
 
       {/* Right Group */}
       <group position={[1, 0, 0]}>
-        {/* Thumbs Up */}
+        {/* Thumb Up */}
         <Float floatIntensity={0.3} rotationIntensity={1.5}>
-          <ThumbsUp 
-            scale={0.2} 
+          <ThumbUp 
+            scale={0.3} 
             position={[1.4, 0.6, 1]} 
-            rotation-y={0.5} 
+            rotation-y={2.5} 
           />
         </Float>
 
