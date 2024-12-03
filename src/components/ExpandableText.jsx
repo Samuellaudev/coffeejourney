@@ -11,7 +11,8 @@ export const ExpandableText = ({
   smallTextPosition = [0.1, 0.8, 0],
   planeInitialSize = [4, 0.8],
   planeExpandedSize = [4, 1],
-  groupPosition
+  groupPosition,
+  expandedTextLength = 4
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [visibleText, setVisibleText] = useState('');
@@ -54,18 +55,18 @@ export const ExpandableText = ({
         transition={ { duration: 0.5, ease: 'easeInOut' } }
       >
         <Plane
-          args={ [planeInitialSize[0], expanded ? planeExpandedSize[1] : planeInitialSize[1]] }  // Adjust the height of the plane
+          args={ [expanded ? planeExpandedSize[0] : planeInitialSize[0], expanded ? planeExpandedSize[1] : planeInitialSize[1]] }  // Adjust the height of the plane
           position={ [initialPosition[0], expanded ? 0.5 : initialPosition[1], -0.05] }  // Adjust the Y position based on expansion
           onClick={ handleClick }
         >
-          <meshBasicMaterial color="white" opacity={ 0.4 } transparent={ true } />
+          <meshBasicMaterial color="white" opacity={ 0.7 } transparent={ true } />
         </Plane>
       </motion.group>
 
       {/* Main Text */ }
       <Text
         fontSize={ textSize }
-        color="brown"
+        color="black"
         anchorX="center"
         anchorY="middle"
         font="/Inter-Bold.ttf"
@@ -74,8 +75,9 @@ export const ExpandableText = ({
           expanded ? initialPosition[1] : initialPosition[1] + 0.1,
           initialPosition[2],
         ] }
-        maxWidth={ expanded ? 4 : 2 }
+        maxWidth={ expanded ? expandedTextLength : 2 }
         textAlign="center"
+        lineHeight={ 1.5 }
       >
         { visibleText }
       </Text>
@@ -83,7 +85,7 @@ export const ExpandableText = ({
       {/* Small "Click to expand" text */ }
       { !expanded && (
         <Text
-          fontSize={ 0.15 }
+          fontSize={ 0.08 }
           color="gray"
           anchorX="center"
           anchorY="middle"

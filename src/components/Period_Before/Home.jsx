@@ -36,14 +36,16 @@ export const Home = () => {
         </Float>
 
         <ExpandableText
-          content="This is a long piece of content that can be expanded."
-          typingSpeed={ 30 }
-          maxLength={ 15 }
+          content="Hi! I’m Samuel Lau. Nice to meet you! Back in 2023, I was a web developer in Hong Kong, creating dynamic, user-friendly websites. I believe great developers are curious, detail-oriented, and love solving problems—just like me. (Keep scrolling to follow my journey! :D)"
+          typingSpeed={ 20 }
+          maxLength={ 37 }
+          textSize={ 0.09 }
           initialPosition={ [0.1, 1, 0] }
-          smallTextPosition={ [0.1, 0.8, 0] }
-          planeInitialSize={ [4, 0.8] }
-          planeExpandedSize={ [4, 1] }
-          groupPosition={ [0, 0, 0] }
+          smallTextPosition={ [0.1, 0.9, 0] }
+          planeInitialSize={ [3.5, 0.6] }
+          planeExpandedSize={ [2, 0.5] }
+          groupPosition={ [1.5, -0.4, 0] }
+          expandedTextLength={ 2 }
         />
 
         <Float floatIntensity={ 2 } speed={ 2 }>
@@ -54,7 +56,6 @@ export const Home = () => {
           />
         </Float>
       </group>
-
 
       {/* Monitor Group */ }
       <group position={ [monitorPosition.x, monitorPosition.y, monitorPosition.z] } rotation={ [0, monitorRotation.y, 0] } scale={ 0.8 }>
