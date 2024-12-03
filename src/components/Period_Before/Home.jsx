@@ -1,74 +1,76 @@
+import { useMemo } from 'react';
 import { config } from "../../config";
-
 import { Center, Float, RoundedBox } from "@react-three/drei";
 import { SectionTitle } from '../SectionTitle';
 import { MacBookPro } from "./MacBookPro";
 import { MonitorScreen } from "./MonitorScreen";
 import { Monitor } from "./Monitor";
 import { Star } from "./Star";
+import { ExpandableText } from '../ExpandableText';
 
 export const Home = () => {
+  const titlePosition = useMemo(() => ({ x: 1, y: 1.6, z: -3 }), []);
+  const macBookPosition = useMemo(() => ({ x: -1.3, y: 0.5, z: 0 }), []);
+  const monitorPosition = useMemo(() => ({ x: 1.5, y: 0.1, z: 0 }), []);
+  const monitorRotation = useMemo(() => ({ y: -Math.PI / 6 }), []);
+
   return (
     <>
-      <Star position-z={ 0 } position-y={ 2.2 } scale={ 0.3 } />
-      <Float floatIntensity={ 0.6 }>
-        <Center disableY disableZ>
-          <SectionTitle
-            size={ 0.6 }
-            position-x={ 1 }
-            position-y={ 1.6 }
-            position-z={ -3 }
-            rotation-y={0.3}
-            bevelEnabled
-            bevelThickness={ 0.3 }
-            color="#AFE1AF"
-          >
-            { config.home.title }
-          </SectionTitle>
-        </Center>
-      </Float>
-      <Center disableY disableZ>
-        <SectionTitle
-          size={ 0.8 }
-          position-x={ -1 }
-          position-z={ -3 }
-          bevelEnabled
-          bevelThickness={ 0.3 }
-          rotation-y={ Math.PI / 10 }
-        >
-          { config.home.subtitle }
-        </SectionTitle>
-      </Center>
-      <Float floatIntensity={ 2 } speed={ 2 }>
-        <MacBookPro
-          position-x={ -1.3 }
-          position-y={ 0.5 }
-          position-z={ 0 }
-          scale={ 0.3 }
-          rotation-y={ Math.PI / 4 }
+      {/* Star component */ }
+      <Star position={ [0, 2.2, 0] } scale={ 0.3 } />
+
+      <group>
+        <Float floatIntensity={ 0.6 }>
+          <Center disableY disableZ>
+            <SectionTitle
+              size={ 0.6 }
+              position={ [titlePosition.x, titlePosition.y, titlePosition.z] }
+              rotation={ [0, 0.3, 0] }
+              bevelEnabled
+              bevelThickness={ 0.3 }
+              color="#AFE1AF"
+            >
+              { config.home.title }
+            </SectionTitle>
+          </Center>
+        </Float>
+
+        <ExpandableText
+          content="This is a long piece of content that can be expanded."
+          typingSpeed={ 30 }
+          maxLength={ 15 }
+          initialPosition={ [0.1, 1, 0] }
+          smallTextPosition={ [0.1, 0.8, 0] }
+          planeInitialSize={ [4, 0.8] }
+          planeExpandedSize={ [4, 1] }
+          groupPosition={ [0, 0, 0] }
         />
-      </Float>
-      <group
-        position-x={ 1.5 }
-        position-z={ 0 }
-        rotation-y={ -Math.PI / 6 }
-        scale={ 0.8 }
-      >
+
+        <Float floatIntensity={ 2 } speed={ 2 }>
+          <MacBookPro
+            position={ [macBookPosition.x, macBookPosition.y, macBookPosition.z] }
+            scale={ 0.3 }
+            rotation={ [0, Math.PI / 4, 0] }
+          />
+        </Float>
+      </group>
+
+
+      {/* Monitor Group */ }
+      <group position={ [monitorPosition.x, monitorPosition.y, monitorPosition.z] } rotation={ [0, monitorRotation.y, 0] } scale={ 0.8 }>
         <Monitor
           scale={ 0.02 }
-          position-y={ 1 }
-          rotation-y={ -Math.PI / 2 }
-          position-z={ -1 }
+          position={ [0, 1, -1] }
+          rotation={ [0, -Math.PI / 2, 0] }
         />
         <MonitorScreen
-          rotation-x={ -0.18 }
-          position-z={ -0.895 }
-          position-y={ 1.74 }
+          rotation={ [-0.18, 0, 0] }
+          position={ [0, 1.74, -0.895] }
         />
-        <RoundedBox scale-x={ 1.5 } position-y={ 0.5 } position-z={ -1 }>
+        <RoundedBox scale-x={ 1.5 } position={ [0, 0.5, -1] }>
           <meshStandardMaterial color="white" />
         </RoundedBox>
       </group>
     </>
-  )
-}
+  );
+};
