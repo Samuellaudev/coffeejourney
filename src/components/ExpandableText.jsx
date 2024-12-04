@@ -1,6 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Text, Plane } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
+import { useThree } from '@react-three/fiber';  // Import for raycasting and 3D context
+import * as THREE from 'three';  // Import THREE.js
 
 export const ExpandableText = ({
   content,
@@ -16,6 +18,10 @@ export const ExpandableText = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [visibleText, setVisibleText] = useState('');
+  const groupRef = useRef(null);
+
+  // Raycasting setup
+  const { camera, gl } = useThree();
 
   // Handle text typing effect
   useEffect(() => {
@@ -37,6 +43,33 @@ export const ExpandableText = ({
   // Memoize the click handler to prevent unnecessary re-renders
   const handleClick = useCallback(() => setExpanded((prev) => !prev), []);
 
+  const handleClickOutside = (event) => {
+    const mouse = new THREE.Vector2();
+    const raycaster = new THREE.Raycaster();
+
+    // Normalize mouse coordinates
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Set up raycasting from the camera with the mouse position
+    raycaster.setFromCamera(mouse, camera);
+
+    // Check for intersections with the group
+    const intersects = raycaster.intersectObjects([groupRef.current]);
+
+    // If there are no intersections, close the expansion
+    if (intersects.length === 0) {
+      setExpanded(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('pointerdown', handleClickOutside);
+    return () => {
+      document.removeEventListener('pointerdown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <motion.group
       scale={ expanded ? 1.2 : 1 }
@@ -45,8 +78,10 @@ export const ExpandableText = ({
       onClick={ handleClick }
       pointerEvents="auto"
       position={ groupPosition }
+      ref={ groupRef }
+      style={{ cursor: 'pointer' }}  // Added cursor styling for better feedback
     >
-      {/* Background Plane */ }
+      {/* Background Plane */}
       <motion.group
         animate={ {
           scaleX: expanded ? 1.1 : 0.5,   // Adjust scale for X (width)
@@ -55,15 +90,16 @@ export const ExpandableText = ({
         transition={ { duration: 0.5, ease: 'easeInOut' } }
       >
         <Plane
-          args={ [expanded ? planeExpandedSize[0] : planeInitialSize[0], expanded ? planeExpandedSize[1] : planeInitialSize[1]] }  // Adjust the height of the plane
-          position={ [initialPosition[0], expanded ? 0.5 : initialPosition[1], -0.05] }  // Adjust the Y position based on expansion
+          args={ [expanded ? planeExpandedSize[0] : planeInitialSize[0], expanded ? planeExpandedSize[1] : planeInitialSize[1]] }
+          position={ [initialPosition[0], expanded ? 0.5 : initialPosition[1], -0.05] }
           onClick={ handleClick }
+          style={{ cursor: 'pointer' }}  // Added cursor styling here as well
         >
           <meshBasicMaterial color="white" opacity={ 0.7 } transparent={ true } />
         </Plane>
       </motion.group>
 
-      {/* Main Text */ }
+      {/* Main Text */}
       <Text
         fontSize={ textSize }
         color="black"
@@ -82,7 +118,7 @@ export const ExpandableText = ({
         { visibleText }
       </Text>
 
-      {/* Small "Click to expand" text */ }
+      {/* Small "Click to expand" text */}
       { !expanded && (
         <Text
           fontSize={ 0.08 }
@@ -98,4 +134,4 @@ export const ExpandableText = ({
       ) }
     </motion.group>
   );
-}
+};
