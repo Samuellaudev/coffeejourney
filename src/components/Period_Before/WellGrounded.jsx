@@ -4,56 +4,70 @@ import { CoffeeShop } from '../Period_Before/CoffeeShop';
 import { config } from '../../config';
 import { Billboard } from './Billboard';
 import { EmojiHappy } from './EmojiHappy';
+import { ExpandableText } from '../ExpandableText';
 
 export const WellGrounded = () => {
   return (
     <>
-      {/* Left Group - Titles */} 
-      <group position-x={0.5} rotation-y={Math.PI / 6}>
-        <Float floatIntensity={0.6}>
+      {/* Left Group - Titles */ }
+      <group position-x={ 0.5 } rotation-y={ Math.PI / 6 }>
+        <Float floatIntensity={ 0.6 }>
           <Center disableY disableZ>
             <SectionTitle
-              size={0.6}
-              position={[-1.8, 2.2, -3]}
+              size={ 0.6 }
+              position={ [-1.8, 2.2, -3] }
               color="#d45b69"
               bevelEnabled
-              bevelThickness={0.3}
+              bevelThickness={ 0.3 }
             >
-              {config.wellGrounded.dynamicTitle}
+              { config.wellGrounded.dynamicTitle }
             </SectionTitle>
           </Center>
         </Float>
 
         <SectionTitle
-          size={0.5}
-          position={[-3, 1.2, -3]}
+          size={ 0.5 }
+          position={ [-3, 1.2, -3] }
           bevelEnabled
-          bevelThickness={0.3}
+          bevelThickness={ 0.3 }
         >
-          {config.wellGrounded.staticTitle}
+          { config.wellGrounded.staticTitle }
         </SectionTitle>
       </group>
 
-      {/* Right Group - Emoji, Billboard, and Coffee Shop */} 
-      <group position-z={-2} rotation-y={-0.6}>
-        <Float floatIntensity={0.6}>
+      {/* Right Group - Emoji, Billboard, and Coffee Shop */ }
+      <group position-z={ -2 } rotation-y={ -0.6 }>
+        <Float floatIntensity={ 0.6 }>
           <EmojiHappy
-            scale={0.5}
-            position={[1.5, 2.8, -2.3]}
-            rotation-y={-1.8}
+            scale={ 0.5 }
+            position={ [1.5, 2.8, -2.3] }
+            rotation-y={ -1.8 }
           />
         </Float>
 
         <Billboard
-          scale={0.4}
-          position={[3.5, 0.1, 1]}
+          scale={ 0.4 }
+          position={ [3.5, 0.1, 1] }
         />
 
         <CoffeeShop
-          scale={13}
-          position={[2.4, 0, -1.5]}
+          scale={ 13 }
+          position={ [2.4, 0, -1.5] }
         />
       </group>
+
+      <ExpandableText
+        content="Luckily, I found Well Grounded! In Hong Kong, it's rare for organizations to offer free employment programs to participants, so I was skeptical at first. But guess what? My coffee journey had just begun!"
+        typingSpeed={ 20 }
+        maxLength={ 37 }
+        textSize={ 0.09 }
+        groupPosition={ [1.3, 0.3, 0.4] }
+        initialPosition={ [0.1, 1, 0] }
+        smallTextPosition={ [0.1, 0.9, 0] }
+        planeInitialSize={ [3.5, 0.6] }
+        planeExpandedSize={ [2, 0.5] }
+        expandedTextLength={ 2 }
+      />
     </>
   );
 };
