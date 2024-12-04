@@ -34,7 +34,7 @@ export const Jobless = () => {
           typingSpeed={ 20 }
           maxLength={ 37 }
           textSize={ 0.09 }
-          groupPosition={ [0.3, -0.4, 1] }
+          groupPosition={ [0.3, -0.1, 1] }
           initialPosition={ [0.1, 1, 0] }
           smallTextPosition={ [0.1, 0.9, 0] }
           planeInitialSize={ [3.5, 0.6] }

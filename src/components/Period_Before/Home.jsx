@@ -40,11 +40,11 @@ export const Home = () => {
           typingSpeed={ 20 }
           maxLength={ 37 }
           textSize={ 0.09 }
+          groupPosition={ [1.5, -0.3, 0] }
           initialPosition={ [0.1, 1, 0] }
           smallTextPosition={ [0.1, 0.9, 0] }
           planeInitialSize={ [3.5, 0.6] }
           planeExpandedSize={ [2, 0.5] }
-          groupPosition={ [1.5, -0.4, 0] }
           expandedTextLength={ 2 }
         />
 
