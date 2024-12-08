@@ -7,6 +7,7 @@ import { Experience } from "./components/Experience";
 import { Interface } from "./components/Interface";
 import { Menu } from "./components/Menu";
 import { LoadingScreen } from "./components/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react"
 
 const audio = new Audio("./audios/cheerful-mood.mp3");
 audio.loop = true;
@@ -47,8 +48,9 @@ function App() {
           </ScrollControls>
         }</Suspense>
       </Canvas>
-      { start && <Menu />}
-      <LoadingScreen started={start} onStarted={() => setStart(true)} />
+      { start && <Menu /> }
+      <LoadingScreen started={ start } onStarted={ () => setStart(true) } />
+      <Analytics />
     </>
   );
 }
