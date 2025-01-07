@@ -93,3 +93,31 @@
   right: -20px;
   top: 0
 }
+
+@media (max-width: 990px) {
+  .loadingScreen__title {
+    font-size: 2rem;
+  }
+
+  .loadingScreen__button {
+    margin-top: 0.5rem;
+    padding: 8px 20px;
+    font-size: 1.25rem;
+  }
+
+  .loadingScreen__board {
+    width: 600px;
+    padding: 44px;
+    margin: 0 1.25rem;
+  }
+
+  .coffee__cup {
+    width: 150px;
+    left: -30px;
+  }
+  
+  .coffee__beans {
+    width: 60px;
+    right: -0px;
+  }
+}
