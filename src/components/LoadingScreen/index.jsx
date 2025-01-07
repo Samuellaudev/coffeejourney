@@ -1,7 +1,8 @@
 import { useProgress } from "@react-three/drei";
+import './LoadingScreen.css';
 
 export const LoadingScreen = ({ started = false, onStarted = () => { } }) => {
-  const { progress } = useProgress();
+  const { progress = 0 } = useProgress();
 
   return (
     <div className={ `loadingScreen ${ started ? "loadingScreen--started" : "" }` }>
@@ -14,7 +15,7 @@ export const LoadingScreen = ({ started = false, onStarted = () => { } }) => {
         />
       </div>
       <div className="loadingScreen__board">
-        <h1 className="loadingScreen__title">Welcome to my coffee journey!</h1>
+        <h1 className="loadingScreen__title">From Code to Coffee: My Barista Journey</h1>
         <img
           src="/images/coffee_cup.png"
           className="coffee__cup"

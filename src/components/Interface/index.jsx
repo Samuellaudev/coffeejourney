@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { config } from "../config";
+import { config } from "../../config";
 import { atom, useAtom } from "jotai";
+import './Interface.css'
 
 export const projectAtom = atom(config.projects[0]);
 

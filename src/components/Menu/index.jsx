@@ -1,6 +1,7 @@
-import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "../DropdownMenu";
 import { useAtom } from "jotai";
-import { scrollAtom } from "../config/scrollAtom";
+import { scrollAtom } from "../../config/scrollAtom";
+import './Menu.css'
 
 const menuItems = {
   before: [
