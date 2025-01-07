@@ -11,45 +11,52 @@ import { Analytics } from "@vercel/analytics/react"
 
 const audio = new Audio("./audios/cheerful-mood.mp3");
 audio.loop = true;
+
 function App() {
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    if (start) {
-      audio.play();
-    }
+    if (start) audio.play();
+
+    return () => audio.pause();
   }, [start]);
+
+  const handleStart = () => setStart(true);
 
   return (
     <>
-      <Canvas camera={ { position: [0, 0.5, 5], fov: 42 } }>
-        <color attach="background" args={ ["#f5f3ee"] } />
-        <fog attach="fog" args={ ["#f5f3ee", 10, 50] } />
-        <Suspense fallback={ null }>{ start &&
-          <ScrollControls
-            pages={ config.sections.length }
-            damping={ 0.1 }
-            maxSpeed={ 0.2 }
-          >
-            <group position-y={ -1 }>
-              <MotionConfig
-                transition={ {
-                  duration: 0.6,
-                } }
+      <LoadingScreen started={ start } onStarted={handleStart} />
+      { start && (
+        <>
+          <Menu />
+          <Canvas camera={ { position: [0, 0.5, 5], fov: 42 } }>
+            <color attach="background" args={ ["#f5f3ee"] } />
+            <fog attach="fog" args={ ["#f5f3ee", 10, 50] } />
+            <Suspense fallback={ null }>{ start &&
+              <ScrollControls
+                pages={ config.sections.length }
+                damping={ 0.1 }
+                maxSpeed={ 0.2 }
               >
-                <Experience />
-              </MotionConfig>
-            </group>
-            <Scroll html>
-              <MotionConfig transition={ { duration: 1 } }>
-                <Interface />
-              </MotionConfig>
-            </Scroll>
-          </ScrollControls>
-        }</Suspense>
-      </Canvas>
-      { start && <Menu /> }
-      <LoadingScreen started={ start } onStarted={ () => setStart(true) } />
+                <group position-y={ -1 }>
+                  <MotionConfig
+                    transition={ {
+                      duration: 0.6,
+                    } }
+                  >
+                    <Experience />
+                  </MotionConfig>
+                </group>
+                <Scroll html>
+                  <MotionConfig transition={ { duration: 1 } }>
+                    <Interface />
+                  </MotionConfig>
+                </Scroll>
+              </ScrollControls>
+            }</Suspense>
+          </Canvas>
+        </>
+      ) }
       <Analytics />
     </>
   );
