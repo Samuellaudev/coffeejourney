@@ -1,3 +1,4 @@
+import { useMobile } from '../../hooks/useMobile';
 import { Center, Float } from '@react-three/drei';
 import { SectionTitle } from '../SectionTitle';
 import { CoffeeShop } from '../Period_Before/CoffeeShop';
@@ -7,10 +8,16 @@ import { EmojiHappy } from './EmojiHappy';
 import { ExpandableText } from '../ExpandableText';
 
 export const WellGrounded = () => {
+  const { isMobile, scaleFactor } = useMobile()
+
   return (
     <>
       {/* Left Group - Titles */ }
-      <group position-x={ 0.5 } rotation-y={ Math.PI / 6 }>
+      <group
+        scale={ isMobile ? 0.8 : 1 }
+        position={ isMobile ? [0.3, 0, -5] : [0.5, 0, 0] }
+        rotation-y={ Math.PI / 6 }
+      >
         <Float floatIntensity={ 0.6 }>
           <Center disableY disableZ>
             <SectionTitle
@@ -36,7 +43,11 @@ export const WellGrounded = () => {
       </group>
 
       {/* Right Group - Emoji, Billboard, and Coffee Shop */ }
-      <group position-z={ -2 } rotation-y={ -0.6 }>
+      <group
+        rotation-y={ -0.6 }
+        scale={ isMobile ? 0.8 : 1 }
+        position={ isMobile ? [-0.4, 0, -6] : [0, 0, -2] }
+      >
         <Float floatIntensity={ 0.6 }>
           <EmojiHappy
             scale={ 0.5 }
@@ -58,15 +69,15 @@ export const WellGrounded = () => {
 
       <ExpandableText
         content="Luckily, I found Well Grounded! In Hong Kong, it's rare for organizations to offer free employment programs to participants, so I was skeptical at first. But guess what? My coffee journey had just begun!"
-        typingSpeed={ 20 }
+        typingSpeed={ 15 }
         maxLength={ 37 }
-        textSize={ 0.09 }
-        groupPosition={ [1.3, 0.3, 0.4] }
         initialPosition={ [0.1, 1, 0] }
         smallTextPosition={ [0.1, 0.9, 0] }
+        textSize={ isMobile ? 0.07 : 0.09 }
+        groupPosition={ isMobile ? [-0.2, -0.8, 4] : [1.3, 0.3, 0.4] }
         planeInitialSize={ [3.5, 0.6] }
-        planeExpandedSize={ [2, 0.5] }
-        expandedTextLength={ 2 }
+        planeExpandedSize={ isMobile ? [1.2, 0.4] : [2, 0.5] }
+        expandedTextLength={ isMobile ? 1.2 : 2 }
       />
     </>
   );

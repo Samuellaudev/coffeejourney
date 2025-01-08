@@ -1,3 +1,4 @@
+import { useMobile } from '../../hooks/useMobile';
 import { Float } from '@react-three/drei';
 import { SectionTitle } from '../SectionTitle';
 import { config } from '../../config';
@@ -8,12 +9,14 @@ import { EmojiSad } from '../Period_Before/EmojiSad';
 import { ExpandableText } from '../ExpandableText';
 
 export const Jobless = () => {
+  const { isMobile, scaleFactor } = useMobile()
+
   return (
     <>
       {/* Left Group - Floating Emoji, Bookcase, Couch, and Lamp */ }
-      <group position={ [-2, 0, -1] }>
+      <group position={ isMobile ? [-1.5, 0, -5] : [-2, 0, -1] }>
         <Float floatIntensity={ 0.6 }>
-          <EmojiSad position-y={ 3.3 } rotation-y={ 0.2 } />
+          <EmojiSad position-y={ 3.3 } rotation-y={ 0.2 } scale={ isMobile ? 0.5 : 1 } />
         </Float>
 
         <BookCase position-z={ -2 } />
@@ -31,20 +34,24 @@ export const Jobless = () => {
 
         <ExpandableText
           content="However, things didn’t go as planned. It's not easy to find a job in the UK if I don’t have any local work experience, which eventually led to a one-year employment break (sounds more positive than being called jobless T_T)"
-          typingSpeed={ 20 }
+          typingSpeed={ 15 }
           maxLength={ 37 }
-          textSize={ 0.09 }
-          groupPosition={ [0.3, -0.1, 1] }
           initialPosition={ [0.1, 1, 0] }
           smallTextPosition={ [0.1, 0.9, 0] }
+          textSize={ isMobile ? 0.07 : 0.09 }
+          groupPosition={ isMobile ? [1.4, -0.8, 9] : [0.3, -0.1, 1] }
           planeInitialSize={ [3.5, 0.6] }
-          planeExpandedSize={ [2, 0.5] }
-          expandedTextLength={ 2 }
+          planeExpandedSize={ isMobile ? [1.2, 0.4] : [2, 0.5] }
+          expandedTextLength={ isMobile ? 1.2 : 2 }
         />
       </group>
 
       {/* Right Group - Dynamic and Static Section Titles */ }
-      <group position={ [0.1, 0, -1] } rotation-y={ -0.3 }>
+      <group
+        rotation-y={ -0.3 }
+        scale={ isMobile ? 0.6 : 1 }
+        position={ isMobile ? [0.1, 0, -4] : [0.1, 0, -1] }
+      >
         <Float floatIntensity={ 0.6 }>
           <SectionTitle
             size={ 0.7 }
