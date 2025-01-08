@@ -6,6 +6,9 @@ import {
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
+import { useMobile } from "../hooks/useMobile";
+import { config } from "../config";
+
 import { Avatar } from "./Avatar";
 // Period Before
 import { Home } from "./Period_Before/Home";
@@ -17,11 +20,8 @@ import { Essentials } from "./Period_During/Essentials";
 import { Master } from "./Period_During/Master";
 import { Skills } from "./Period_During/Skills";
 import { WorkPlacement } from "./Period_During/WorkPlacement";
-// import { Projects } from "./Period_During/Projects";
 // Period After
 import { ThankYou } from "./Period_After/ThankYou";
-
-import { config } from "../config";
 
 const SECTIONS_DISTANCE = 10;
 
@@ -29,10 +29,17 @@ export const Experience = () => {
   const [section, setSection] = useState(config.sections[0])
   const sceneContainer = useRef()
   const scrollData = useScroll()
+  const { isMobile } = useMobile()
 
   useFrame(() => {
-    sceneContainer.current.position.z =
-      -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1)
+    const positionOffset = -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
+
+    // Set z-axis to 0 when in mobile
+    if (isMobile) {
+      sceneContainer.current.position.set(positionOffset, 0, 0)
+    } else {
+      sceneContainer.current.position.set(0, 0, positionOffset)
+    }
 
     setSection(
       config.sections[Math.round(scrollData.offset * (scrollData.pages - 1))]
@@ -84,9 +91,11 @@ export const Experience = () => {
         >
           <Home />
         </motion.group>
+
         {/* FlyToUk */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE }
+          position-x={ isMobile ? SECTIONS_DISTANCE : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE }
           position-y={ -5 }
           variants={ {
             flyToUk: {
@@ -96,9 +105,11 @@ export const Experience = () => {
         >
           <FlyToUk />
         </motion.group>
+
         {/* Jobless */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 2 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 2 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 2 }
           position-y={ -5 }
           variants={ {
             jobless: {
@@ -108,9 +119,11 @@ export const Experience = () => {
         >
           <Jobless />
         </motion.group>
+
         {/* WellGrounded */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 3 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 3 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 3 }
           position-y={ -5 }
           variants={ {
             wellGrounded: {
@@ -120,9 +133,11 @@ export const Experience = () => {
         >
           <WellGrounded />
         </motion.group>
+
         {/* Essentials */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 4 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 4 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 4 }
           position-y={ -5 }
           variants={ {
             essentials: {
@@ -132,9 +147,11 @@ export const Experience = () => {
         >
           <Essentials />
         </motion.group>
+
         {/* Master */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 5 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 5 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 5 }
           position-y={ -5 }
           variants={ {
             master: {
@@ -144,9 +161,11 @@ export const Experience = () => {
         >
           <Master />
         </motion.group>
+
         {/* SKILLS */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 6 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 6 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 6 }
           position-y={ -5 }
           variants={ {
             skills: {
@@ -156,9 +175,11 @@ export const Experience = () => {
         >
           <Skills />
         </motion.group>
+
         {/* Work Placement */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 7 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 7 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 7 }
           position-y={ -5 }
           variants={ {
             workPlacement: {
@@ -169,22 +190,10 @@ export const Experience = () => {
           <WorkPlacement />
         </motion.group>
 
-        {/* PROJECTS */ }
-        {/* <motion.group
-          position-z={ SECTIONS_DISTANCE * 7 }
-          position-y={ -5 }
-          variants={ {
-            projects: {
-              y: 0,
-            },
-          } }
-        >
-          <Projects />
-        </motion.group> */}
-
         {/* Thank You */ }
         <motion.group
-          position-z={ SECTIONS_DISTANCE * 8 }
+          position-x={ isMobile ? SECTIONS_DISTANCE * 8 : 0 }
+          position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 8 }
           position-y={ -5 }
           variants={ {
             thankYou: {

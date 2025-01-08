@@ -9,6 +9,7 @@ import { useGLTF, useFBX, useAnimations, useScroll } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
 import { useAtom } from 'jotai';
 import { scrollAtom } from '../config/scrollAtom';
+import { useMobile } from '../hooks/useMobile';
 
 import * as THREE from "three";
 
@@ -19,6 +20,8 @@ export function Avatar(props) {
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   // Extract nodes and materials for direct use
   const { nodes, materials } = useGraph(clone)
+
+  const { isMobile } = useMobile()
 
   // Load animations for idle and walking states
   const { animations: idleAnimation } = useFBX('/animations/Idle.fbx')
@@ -55,9 +58,11 @@ export function Avatar(props) {
       setAnimation("Walking");
 
       // Rotate to face scroll direction
-      rotationTarget = scrollDelta > 0
-        ? 0
-        : Math.PI;
+      if (scrollDelta > 0) {
+        rotationTarget = isMobile ? Math.PI / 2 : 0
+      } else {
+        rotationTarget = isMobile ? -Math.PI / 2 : Math.PI;
+      }
     } else {
       setAnimation("Idle");
     }
