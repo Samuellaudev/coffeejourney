@@ -64,7 +64,7 @@ export const Interface = () => {
         <section className="section section--left"></section>
 
         {/* SKILLS */ }
-        <section className="section section--right mobile--section--left mobile--section--bottom">
+        <section className="section section--right mobile--section--bottom">
           <motion.div
             className="skills"
             whileInView={ "visible" }
