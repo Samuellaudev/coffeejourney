@@ -67,7 +67,7 @@ export const Experience = () => {
   return (
     <>
       <Environment preset="sunset" />
-      <Avatar />
+      <Avatar position-z={isMobile ? -5 : 0} />
 
       {/* SHADOWS & FLOOR */ }
       <ContactShadows opacity={ 0.5 } scale={ [30, 30] } color="#9c8e66" />
