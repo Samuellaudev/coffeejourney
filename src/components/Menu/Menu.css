@@ -28,9 +28,10 @@
   .menu {
     left: 0rem;
     right: 0rem;
+    flex-direction: column;
   }
 
   .menu__items {
-    display: none;
+    margin-top: 1rem;
   }
 }
