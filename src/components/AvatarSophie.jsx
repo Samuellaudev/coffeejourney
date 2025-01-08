@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useFrame, useGraph } from '@react-three/fiber'
 import { useGLTF, useFBX, useAnimations, useScroll } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
+import { useMobile } from '../hooks/useMobile'
 
 import * as THREE from "three";
 
@@ -14,6 +15,8 @@ export function AvatarSophie(props) {
   const { scene } = useGLTF('/models/AvatarSophie.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
+
+  const { isMobile } = useMobile()
 
   // Load animations for idle and walking states
   const { animations: idleAnimation } = useFBX('/animations/Idle.fbx')
@@ -48,9 +51,11 @@ export function AvatarSophie(props) {
       setAnimation("Walking");
 
       // Rotate to face scroll direction
-      rotationTarget = scrollDelta > 0
-        ? 0
-        : Math.PI;
+      if (scrollDelta > 0) {
+        rotationTarget = isMobile ? Math.PI / 2 : 0
+      } else {
+        rotationTarget = isMobile ? -Math.PI / 2 : Math.PI;
+      }
     } else {
       setAnimation("Idle");
     }
