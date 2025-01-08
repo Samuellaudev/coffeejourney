@@ -9,7 +9,6 @@ export const config = {
     "master",
     "skills",
     "workPlacement",
-    // "projects",
     "thankYou"
   ],
   home: {
@@ -31,9 +30,6 @@ export const config = {
   master: {
     title: "Master",
     subtitle: "",
-  },
-  contact: {
-    mail: "info@samuellau.dev",
   },
   skills: [
     {
@@ -98,8 +94,7 @@ export const config = {
     address: "Bristol, United Kingdom",
     socials: {
       linkedin: "https://www.linkedin.com/in/samuel-cf-lau/",
-      twitter: "",
     },
-    mail: "info@samuellau.dev",
-  },
+    mail: "samuel.cflau@gmail.com",
+  }
 };

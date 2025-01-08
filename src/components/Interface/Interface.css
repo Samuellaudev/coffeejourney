@@ -126,3 +126,44 @@
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 990px) {
+  .mobile--section--top {
+    align-items: flex-start;
+  }
+
+  .mobile--section--bottom {
+    align-items: flex-end;
+  }
+
+  .mobile--section--right {
+    justify-content: flex-end;
+  }
+
+  .mobile--section--left {
+    justify-content: flex-start;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 14.5rem;
+    row-gap: 0.75rem;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .skill {
+    padding: 0.5rem;
+    min-width: 220px;
+    margin: 0;
+  }
+
+  .checkmark {
+    min-width: 60px;
+  }
+
+  .contact {
+    width: 100%;
+  }
+}
