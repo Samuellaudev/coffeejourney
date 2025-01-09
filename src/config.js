@@ -94,6 +94,7 @@ export const config = {
     address: "Bristol, United Kingdom",
     socials: {
       linkedin: "https://www.linkedin.com/in/samuel-cf-lau/",
+      instagram: "https://www.instagram.com/samuel_cf_lau/",
     },
     email: "samuel.cflau@gmail.com",
   }

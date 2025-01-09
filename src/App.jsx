@@ -9,7 +9,7 @@ import { Menu } from "./components/Menu";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Analytics } from "@vercel/analytics/react"
 
-const audio = new Audio("./audios/cheerful-mood.mp3");
+const audio = new Audio("./audios/positive-success.mp3");
 audio.loop = true;
 
 function App() {

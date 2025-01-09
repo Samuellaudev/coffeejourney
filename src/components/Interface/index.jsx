@@ -107,8 +107,6 @@ export const Interface = () => {
         {/* Work Placement */ }
         <section className="section section--left"></section>
 
-        {/* Thank You */ }
-        {/* <section className="section section--left"></section> */ }
         {/* CONTACT */ }
         <section className="section section--left mobile--section--bottom">
           <motion.div
@@ -123,14 +121,16 @@ export const Interface = () => {
               },
             } }
           >
-            <h1 className="contact__name">{ config.contact.name }</h1>
-            <p className="contact__address">{ config.contact.address }</p>
+            <div>
+              <h1 className="contact__name">{ config.contact.name }</h1>
+              <p className="contact__address">{ config.contact.address }</p>
+            </div>
             <div className="contact__socials">
-              <a href={ config.contact.socials.linkedin } target="_blank">
+              <a href={ config.contact.socials.instagram } target="_blank">
                 <img
                   className="contact__socials__icon"
-                  src="icons/linkedin.png"
-                  alt="linkedin"
+                  src="icons/instagram.svg"
+                  alt="instagram"
                 />
               </a>
               <a href={ `mailto:${ config.contact.mail }` } target="_blank">
