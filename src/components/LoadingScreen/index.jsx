@@ -22,9 +22,9 @@ export const LoadingScreen = ({ started = false, onStarted = () => { } }) => {
           alt="A coffee cup illustration"
         />
         <img
-          src="/images/coffee_beans.png"
-          className="coffee__beans"
-          alt="Coffee beans illustration"
+          src="/images/coding.png"
+          className="coding"
+          alt="Coding illustration"
         />
         <button
           className="loadingScreen__button"
