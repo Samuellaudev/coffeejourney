@@ -11,7 +11,6 @@ export const Skills = () => {
   const { isMobile, scaleFactor } = useMobile()
 
   return (
-    // <group position={ [-2, 0, 0] }>
     <group
       position={ isMobile ? [-1.4, -0, -4] : [-2, 0, 0] }
     >
@@ -34,7 +33,7 @@ export const Skills = () => {
       {/* Floating Photo Boxes */ }
       <Float floatIntensity={ 2 }>
         <group
-          position={ isMobile ? [2.5, 0.5, 1] : [0, 0.1, 1.5] }
+          position={ isMobile ? [2.5, 0.5, 1] : [0, 0, 0] }
           rotation-y={ -Math.PI / 18 }
         >
           <PhotoBoxFive />

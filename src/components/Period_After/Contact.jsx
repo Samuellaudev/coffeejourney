@@ -13,7 +13,7 @@ export const Contact = () => {
     <>
       <SectionTitle
         color="#f69050"
-        position-x={ isMobile ? -1.1 : -2 * scaleFactor }
+        position-x={ isMobile ? -1.1 : -1.3 * scaleFactor }
         position-y={ 0.1 }
         position-z={ isMobile ? 1.3 : 1 }
       >
