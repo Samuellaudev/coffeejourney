@@ -21,7 +21,7 @@ import { Master } from "./Period_During/Master";
 import { Skills } from "./Period_During/Skills";
 import { WorkPlacement } from "./Period_During/WorkPlacement";
 // Period After
-import { ThankYou } from "./Period_After/ThankYou";
+import { Contact } from "./Period_After/Contact";
 
 const SECTIONS_DISTANCE = 10;
 
@@ -67,7 +67,7 @@ export const Experience = () => {
   return (
     <>
       <Environment preset="sunset" />
-      <Avatar position-z={isMobile ? -5 : 0} />
+      <Avatar position-z={ isMobile ? -5 : 0 } />
 
       {/* SHADOWS & FLOOR */ }
       <ContactShadows opacity={ 0.5 } scale={ [30, 30] } color="#9c8e66" />
@@ -190,18 +190,18 @@ export const Experience = () => {
           <WorkPlacement />
         </motion.group>
 
-        {/* Thank You */ }
+        {/* Contact */ }
         <motion.group
           position-x={ isMobile ? SECTIONS_DISTANCE * 8 : 0 }
           position-z={ isMobile ? -4 : SECTIONS_DISTANCE * 8 }
           position-y={ -5 }
           variants={ {
-            thankYou: {
+            contact: {
               y: 0,
             },
           } }
         >
-          <ThankYou />
+          <Contact />
         </motion.group>
       </motion.group>
     </>

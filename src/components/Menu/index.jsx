@@ -17,7 +17,7 @@ const menuItems = {
   ],
   after: [
     { href: "#workPlacement", label: "Work Placement" },
-    { href: "#thankYou", label: "Thank You" }
+    { href: "#contact", label: "Contact" }
   ],
 }
 

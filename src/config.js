@@ -9,7 +9,7 @@ export const config = {
     "master",
     "skills",
     "workPlacement",
-    "thankYou"
+    "contact"
   ],
   home: {
     title: "Web Developer",
@@ -95,6 +95,6 @@ export const config = {
     socials: {
       linkedin: "https://www.linkedin.com/in/samuel-cf-lau/",
     },
-    mail: "samuel.cflau@gmail.com",
+    email: "samuel.cflau@gmail.com",
   }
 };

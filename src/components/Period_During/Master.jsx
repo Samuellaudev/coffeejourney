@@ -54,8 +54,10 @@ export const Master = () => {
         position={ isMobile ? [1.5, 0, -6] : [2, -0.5, 0] }
       >
         <Float floatIntensity={ 0.3 }>
-          <PhotoBoxThree />
-          <PhotoBoxFour />
+          <group position={ isMobile ? [0, 0, 2] : [, 0, 0] }>
+            <PhotoBoxThree />
+            <PhotoBoxFour />
+          </group>
         </Float>
 
         <ExpandableText
